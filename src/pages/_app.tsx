@@ -2,7 +2,6 @@ import { ResetCSS, ToastListener } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
 import { NetworkModal } from 'components/NetworkModal'
 import { FixedSubgraphHealthIndicator } from 'components/SubgraphHealthIndicator/FixedSubgraphHealthIndicator'
-import TransactionsDetailModal from 'components/TransactionDetailModal'
 import { useAccountEventListener } from 'hooks/useAccountEventListener'
 import useCheckTokenExpired from 'hooks/useCheckTokenExpired'
 import useEagerConnect from 'hooks/useEagerConnect'
@@ -18,7 +17,6 @@ import { Fragment } from 'react'
 import { PersistGate } from 'redux-persist/integration/react'
 import { persistor, useStore } from 'state'
 import { usePollBlockNumber } from 'state/block/hooks'
-import { usePollCoreFarmData } from 'state/farms/hooks'
 import { Blocklist, Updaters } from '..'
 import { SentryErrorBoundary } from '../components/ErrorBoundary'
 import Menu from '../components/Menu'
@@ -38,7 +36,6 @@ BigNumber.config({
 function GlobalHooks() {
   usePollBlockNumber()
   useEagerConnect()
-  usePollCoreFarmData()
   useUserAgent()
   useAccountEventListener()
   useThemeCookie()
@@ -48,7 +45,6 @@ function GlobalHooks() {
 function MPGlobalHooks() {
   usePollBlockNumber()
   useEagerConnectMP()
-  usePollCoreFarmData()
   useUserAgent()
   useAccountEventListener()
   return null
@@ -150,7 +146,6 @@ const App = ({ Component, pageProps }: AppPropsWithLayout) => {
       <EasterEgg iterations={2} />
       <ToastListener />
       <FixedSubgraphHealthIndicator />
-      <TransactionsDetailModal />
     </ProductionErrorBoundary>
   )
 }

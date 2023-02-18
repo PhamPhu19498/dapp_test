@@ -13,7 +13,6 @@ import Trans from 'components/Trans'
 import { useActiveChainId } from 'hooks/useActiveChainId'
 import useAuth from 'hooks/useAuth'
 import { useEffect, useState } from 'react'
-import { usePendingTransactions } from 'state/transactions/hooks'
 import { useAccount } from 'wagmi'
 
 const UserMenu = () => {
@@ -21,20 +20,9 @@ const UserMenu = () => {
   const { address: account } = useAccount()
   const { isWrongNetwork } = useActiveChainId()
   const { logout } = useAuth()
-  const { hasPendingTransactions, pendingNumber } = usePendingTransactions()
   const [userMenuText, setUserMenuText] = useState<string>('')
   const [userMenuVariable, setUserMenuVariable] = useState<UserMenuVariant>('default')
   const avatarSrc =  undefined
-  useEffect(() => {
-    if (hasPendingTransactions) {
-      setUserMenuText(t('%num% Pending', { num: pendingNumber }))
-      setUserMenuVariable('pending')
-    } else {
-      setUserMenuText('')
-      setUserMenuVariable('default')
-    }
-  }, [hasPendingTransactions, pendingNumber, t])
-
   const UserMenuItems = () => {
     return (
       <>

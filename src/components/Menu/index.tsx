@@ -1,12 +1,10 @@
 import { useTranslation } from '@pancakeswap/localization'
 import { Menu as UikitMenu } from '@pancakeswap/uikit'
-import { NetworkSwitcher } from 'components/NetworkSwitcher'
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import { useRouter } from 'next/router'
 import { useMemo } from 'react'
 import { footerLinks } from './config/footerConfig'
 import { useMenuItems } from './hooks/useMenuItems'
-import UserMenu from './UserMenu'
 import { getActiveMenuItem, getActiveSubMenuItem } from './utils'
 
 const Menu = (props) => {
@@ -27,12 +25,6 @@ const Menu = (props) => {
         linkComponent={(linkProps) => {
           return <NextLinkFromReactRouter to={linkProps.href} {...linkProps} prefetch={false} />
         }}
-        // rightSide={
-        //   <>
-        //     <NetworkSwitcher />
-        //     <UserMenu />
-        //   </>
-        // }
         links={menuItems}
         footerLinks={getFooterLinks}
         activeItem={activeMenuItem?.href}

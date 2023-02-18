@@ -27,82 +27,83 @@ const config: (
   languageCode?: string,
   chainId?: number,
 ) => ConfigMenuItemsType[] = (t, isDark, languageCode, chainId) =>
-  [
-    {
-      label: t('Giới thiệu'),
-      icon: MarketplaceIcon,
-      fillIcon: MarketplaceFillIcon,
-      href: '/gioithieu',
-      showItemsOnMobile: false,
-      items:
-       [
-        {
-          label: t('Giới thiệu'),
-          href: '/gioithieu',
-          supportChainIds:[]
-        }
-      ].map((item) => addMenuItemSupported(item, chainId))
-    },
-    {
-      label: t('Thành tựu'),
-      icon: MarketplaceIcon,
-      fillIcon: MarketplaceFillIcon,
-      href: '/thanhtuu',
-      showItemsOnMobile: false,
-      items:
-       [
-        {
-          label: t('Thành tựu'),
-          href: '/thanhtuu',
-          supportChainIds:[]
-        }
-      ].map((item) => addMenuItemSupported(item, chainId))
-    },
-    {
-      label: t('Đối tác'),
-      icon: MarketplaceIcon,
-      fillIcon: MarketplaceFillIcon,
-      href: '/doitac',
-      showItemsOnMobile: false,
-      items:
-       [
-        {
-          label: t('Đối tác'),
-          href: '/doitac',
-          supportChainIds:[]
-        }
-      ].map((item) => addMenuItemSupported(item, chainId))
-    },
-    {
-      label: t('Tin tức'),
-      icon: MarketplaceIcon,
-      fillIcon: MarketplaceFillIcon,
-      href: '/tintuc',
-      showItemsOnMobile: false,
-      items:
-       [
-        {
-          label: t('Tin tức'),
-          href: '/tintuc',
-          supportChainIds:[]
-        }
-      ].map((item) => addMenuItemSupported(item, chainId))
-    },
-    {
-      label: t('Liên hệ'),
-      icon: MarketplaceIcon,
-      fillIcon: MarketplaceFillIcon,
-      href: '/lienhe',
-      showItemsOnMobile: false,
-      items:
-       [
-        {
-          label: t('Liên hệ'),
-          href: '/lienhe',
-          supportChainIds:[]
-        }
-      ].map((item) => addMenuItemSupported(item, chainId))
-    },
-  ].map((item) => addMenuItemSupported(item, chainId))
+  // [
+  //   {
+  //     label: t('Giới thiệu'),
+  //     icon: MarketplaceIcon,
+  //     fillIcon: MarketplaceFillIcon,
+  //     href: '/gioithieu',
+  //     showItemsOnMobile: false,
+  //     items:
+  //      [
+  //       {
+  //         label: t('Giới thiệu'),
+  //         href: '/gioithieu',
+  //         supportChainIds:[]
+  //       }
+  //     ].map((item) => addMenuItemSupported(item, chainId))
+  //   },
+  //   {
+  //     label: t('Thành tựu'),
+  //     icon: MarketplaceIcon,
+  //     fillIcon: MarketplaceFillIcon,
+  //     href: '/thanhtuu',
+  //     showItemsOnMobile: false,
+  //     items:
+  //      [
+  //       {
+  //         label: t('Thành tựu'),
+  //         href: '/thanhtuu',
+  //         supportChainIds:[]
+  //       }
+  //     ].map((item) => addMenuItemSupported(item, chainId))
+  //   },
+  //   {
+  //     label: t('Đối tác'),
+  //     icon: MarketplaceIcon,
+  //     fillIcon: MarketplaceFillIcon,
+  //     href: '/doitac',
+  //     showItemsOnMobile: false,
+  //     items:
+  //      [
+  //       {
+  //         label: t('Đối tác'),
+  //         href: '/doitac',
+  //         supportChainIds:[]
+  //       }
+  //     ].map((item) => addMenuItemSupported(item, chainId))
+  //   },
+  //   {
+  //     label: t('Tin tức'),
+  //     icon: MarketplaceIcon,
+  //     fillIcon: MarketplaceFillIcon,
+  //     href: '/tintuc',
+  //     showItemsOnMobile: false,
+  //     items:
+  //      [
+  //       {
+  //         label: t('Tin tức'),
+  //         href: '/tintuc',
+  //         supportChainIds:[]
+  //       }
+  //     ].map((item) => addMenuItemSupported(item, chainId))
+  //   },
+  //   {
+  //     label: t('Liên hệ'),
+  //     icon: MarketplaceIcon,
+  //     fillIcon: MarketplaceFillIcon,
+  //     href: '/lienhe',
+  //     showItemsOnMobile: false,
+  //     items:
+  //      [
+  //       {
+  //         label: t('Liên hệ'),
+  //         href: '/lienhe',
+  //         supportChainIds:[]
+  //       }
+  //     ].map((item) => addMenuItemSupported(item, chainId))
+  //   },
+  // ].map((item) => addMenuItemSupported(item, chainId))
+  []
 
 export default config

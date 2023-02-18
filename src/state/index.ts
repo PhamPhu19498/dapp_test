@@ -3,17 +3,9 @@ import { useMemo } from 'react'
 import { useDispatch } from 'react-redux'
 import { FLUSH, PAUSE, PERSIST, persistReducer, persistStore, PURGE, REGISTER, REHYDRATE } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
-import burn from './burn/reducer'
-import farmReducer from './farms'
 import { updateVersion } from './global/actions'
 import globalReducer from './global/reducer'
-import infoReducer from './info'
-import limitOrders from './limitOrders/reducer'
-import mint from './mint/reducer'
 import multicall from './multicall/reducer'
-import poolsReducer from './pools'
-import swap from './swap/reducer'
-import transactions from './transactions/reducer'
 import user from './user/reducer'
 
 const PERSISTED_KEYS: string[] = ['user', 'transactions']
@@ -30,17 +22,8 @@ const persistedReducer = persistReducer(
   persistConfig,
   combineReducers({
     global: globalReducer,
-    farms: farmReducer,
-    pools: poolsReducer,
-    info: infoReducer,
-    limitOrders,
-
     // Exchange
     user,
-    transactions,
-    swap,
-    mint,
-    burn,
     multicall,
   }),
 )
